@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Book_1 = require("./modules/Book");
+const AudioBook_1 = require("./modules/AudioBook");
+const libraryCatalouge_1 = require("./modules/libraryCatalouge");
+const User_1 = require("./modules/User");
+const book1 = new Book_1.Book(1, 'The Great Gatsby', true, 'F. Scott Fitzgerald', '978-0743273565');
+const audio2 = new AudioBook_1.AudioBook('J.K. Rowling', 60, 2, 'Harry Potter and the Sorcerer\'s Stone', true);
+const catalouge = libraryCatalouge_1.LibraryCatalouge.getInstance();
+catalouge.addItem(book1);
+catalouge.addItem(audio2);
+catalouge.displayAllItems();
+catalouge.displayAllAvailableItems();
+const user1 = new User_1.User("Gihan", "gihan@me.com");
+const user2 = new User_1.User("Pasan", "pasan@me.com");
+user1.borrowBook("The Great Gatsby");
+user2.borrowBook("The Great Gatsby");
+catalouge.displayAllAvailableItems();
